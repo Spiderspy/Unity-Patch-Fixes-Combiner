@@ -1,0 +1,201 @@
+<html><body><h1>List of Unity Fixes</h1><h2>Unity 2023.1.10 <span>&#10140;</span> 2023.1.15</h2><h3>2D Fixes</h3><ul><li>2D: Fixed case where sprite turns invisible in URP 2D when Mask Source is set to 'Supported Renderers' and Mask Interaction is set to 'Visible Inside Mask'.
+(UUM-31670)</li><li>2D: Fixed Performance regressions in test suite Playmode for project 2D and test class Unity.U2D.Animation.Performance.Tests.AnimationPerformanceTests.
+(UUM-25896)</li><li>2D: Fixed FullScreenRenderPass when using with Pixel Perfect Camera.
+(UUM-34852)</li><li>2D: Fixed Post Processing and Anti-aliasing during camera stacking when using Renderer2D.
+(UUM-40770)</li><li>2D: Fixed line and trail renderer when using with urp sprite materials.
+(UUM-44445)</li></ul><h3>Animation Fixes</h3><ul><li>Animation: Fixed AnimationWindowCurve evaluation error after step.
+(UUM-30927)</li><li>Animation: Fixed AnimationWindowCurve evaluation error after step.
+(UUM-31316)</li><li>Animation: Fixed mask values in the animation layer mixer when reading animated values from a animation c# job.
+(UUM-42174)</li><li>Animation: Fixed a crash when destroying an animator with a playable graph which containts a scene handle when the graph hasnt been executed.
+(UUM-48364)</li></ul><h3>Apple TV Fixes</h3><ul><li>Apple TV: Fixed native test PluginInterfaceProfilerCallbacks.FileOperation_CallsCallback.
+(UUM-763)</li><li>Apple TV: Fixed on screen keyboard unresponsive to controller when Remote.allowExitToHome is set to false.
+(UUM-39962)</li></ul><h3>Audio Fixes</h3><ul><li>Audio: Fixed Audio Reverb Zone's not being affected by the global volume setting when the Spatial Blend of the Audio Source is lower than 1.
+(UUM-18191)</li><li>Audio: Added lazyloopEndevaluation to avoid keeping a value of 0. Downloaded audio files were were not updating this, causing a division by zero in the playback process.
+(UUM-32163)</li></ul><h3>Editor Fixes</h3><ul><li>Editor: Editor performance test regression fixed.
+(UUM-37597)</li><li>Editor: Fixed a bug where 2D collider gizmos were not rendered when selecting the parent.
+(UUM-41829)</li><li>Editor: Fixed ASAN errors sometimes happening in Editor UI tests.
+(UUM-27445)</li><li>Editor: Fixed rare deadlock that can occur when building DOTS based projects.
+(UUM-46148)</li><li>Editor: Fixed Sprite previews when go out from Play Mode and URP in use.
+(UUM-41498)</li><li>Editor: Updated UI/Docs for previewing audio clip in inspector.
+(UUM-16395)</li><li>Editor: Editor: Fixed incorrect launch screen scaling on Windows scaled 200%.
+(UUM-31767)</li><li>Editor: Ensure that an inspector window is rebuilt if ModelImporter.SaveAndReimport() is called from another window.
+(UUM-41835)</li><li>Editor: Fixed a race condition in Profiler Recorder which led to a crash.
+(UUM-44946)</li><li>Editor: Fixed an issue where Allocator.Temp memory would internally deallocate memory aggressively resulting in temp memory performance regressions.Fixed an issue where flushing on the main thread would cause memory stomp using Allocator.Temp.
+(UUM-45113)</li><li>Editor: Fixed case where internal "Failed to unpersist" would get written to console.
+(UUM-33746)</li><li>Editor: Fixed crash when loading certain corrupted scenes.
+(UUM-43713)</li><li>Editor: Fixed false RenderTexture warning due to colorspace change.
+(UUM-16386)</li><li>Editor: Fixed ProjectCapabilityManager.AddGameCenter() not adding the required entitlement.
+(UUM-44172)</li><li>Editor: Fixed Unity crash when trying to reopen project with Package Manager resolution error.
+(UUM-43054)</li><li>Editor: [MacOS] Warn when editor doesn't have "Screen Recording" permissions to pick colors from other apps with the Color Picker/Eye Dropper tool.
+(UUM-770)</li><li>Editor: Fixed "Can not play a disabled audio source" warning when audio mute is toggled in scene view on with disabled Audio Source in the Scene.
+(UUM-31541)</li><li>Editor: Fixed bug where reserved GLSL words couldn't be used as buffer variable names in compute shaders targeting Vulkan.
+(UUM-41272)</li><li>Editor: Fixed crash when in Deleted GameObjects as overrides.
+(UUM-45217)</li><li>Editor: Fixed extra 38-byte header in DXIL generated for shaders.
+(UUM-37067)</li><li>Editor: Fixed issue where "Top level scope allocation is permitted only on the main thread." error thrown when using Allocator.Temp.
+(UUM-45483)</li><li>Editor: Fixed possible crash in AudioMixer.SetFloat when entering play mode.
+(UUM-35984)</li><li>Editor: Editor: HDRP: Avoid crash on MacOS by no longer passing Probe Volumes buffer with unexpected stride.
+(UUM-41474)</li><li>Editor: Fixed a bug where pressing the RenderDoc capture button in the Game view dock would throw errors.
+(UUM-45877)</li><li>Editor: Fixed a bug where the Edit Collider button was missing from the GameObject property window under certain selection circumstances.
+(UUM-33811)</li><li>Editor: Fixed editor height shrinks if changing layout.
+(UUM-30875)</li><li>Editor: Fixed intermittent crashes in the menu controller that can occur during domain reloads.
+(UUM-34847)</li><li>Editor: Fixed issue where modifying a prefab could crash the Editor on Windows.
+(UUM-36776)</li><li>Editor: Fixed material previews being rendered black.
+(UUM-29305)</li><li>Editor: Perf regression fix with BRG+Vulkan+large batchs.
+(UUM-33174)</li><li>Editor: Ensure "Delete Shortcut Profile" window is a fixed size.
+(UUM-48165)</li><li>Editor: Ensure empty parent after reparenting jumps into rename mode if needed.
+(UUM-15042)</li><li>Editor: Fixed an incremental rebuild error when the build contains VideoClip or VideoPlayer object types.</li><li>Editor: Fixed an issue where the editor would temporarily freeze when selecting large compressed cubemaps with no mipchain.
+(UUM-28610)</li><li>Editor: Fixed an issue where the Texture3D previewer (volume mode) would not function with DX12 / Vulkan.
+(UUM-39954)</li><li>Editor: Fixed an issue where tooltips related to mipmap limit groups were flipped around. (a negative mipmap limit offset uploads more mips, a positive offset uploads less mips -- not the other way around!).
+(UUM-41881)</li><li>Editor: Fixed helper bar not being visible when exiting play mode.
+(UUM-28357)</li><li>Editor: Fixed renderqueue override with shadergraph materials.
+(UUM-42131)</li><li>Editor: Rare case of static batching with transparent shadow rendering issue fixed.
+(UUM-36082)</li><li>Editor: Stop popping the Wizard windows when the Global Settings is invalid.
+(UUM-45694)</li><li>Editor: The stage priority for Sprite renderer and Canvas renderer now updates the value as expected.
+(UUM-35594)</li><li>Editor: [Android] Fixing Regex that checks for Play Libraries on 23.1 to avoid errors when using Core-Common libraries instead of only Play Core errors as expected. Regex now expects a series of digits/dots after the term "core" to avoid the confusion.
+(UUM-44744)</li><li>Editor: Editor: Animation: Fixed size of Animator right panel when left panel is closed.
+(UUM-46921)</li><li>Editor: Fixed Display.RelativeMouseAt() reporting invalid values when using multiple displays that have been resized or moved (Display C# API) on Windows.
+(UUM-44474)</li><li>Editor: Fixed Input.mousePosition reporting invalid values when using multiple displays (Display C# API) on Windows.
+(UUM-44474)</li><li>Editor: Fixed OnMouseDown not working when using multiple displays that have been resized or moved (Display C# API) on Windows.
+(UUM-44474)</li><li>Editor: Target location of drag into SceneView window specified.
+(UUM-32949)</li></ul><h3>IL2CPP Fixes</h3><ul><li>IL2CPP: Allow the number of thread local storage slots to grow at runtime.
+(UUM-31808)</li><li>IL2CPP: Corrected the offset of properties within Explicit layout structs with FieldOffset.
+(UUM-43158)</li><li>IL2CPP: Fixed a deadlock when quitting WebGL Player when the code utilized System.ThreadPool.
+(UUM-32717)</li><li>IL2CPP: Added DivideByZeroChecks to modulo/remainder operator.
+(UUM-45551)</li><li>IL2CPP: ARM64 build fails when Script Debugging is enabled.
+(UUM-37939)</li><li>IL2CPP: Fixed build failure when a delegate had a first parameter that was a function pointer.
+(UUM-44037)</li><li>IL2CPP: Fixed static constructors on structs not being called before class to struct instance methods.
+(UUM-39521)</li><li>IL2CPP: Fixed UnsafeUtililty.IsUnmanaged/UnsafeUtililty.IsBlittable returning incorrect results.
+(UUM-43422)</li><li>IL2CPP: Fixed unsigned shift right of pointer types.
+(UUM-41406)</li><li>IL2CPP: Fixed a crash in some cases where a generic type was being used.
+(UUM-42694)</li><li>IL2CPP: Fixed ExceptionSupportStack overflow with exception filters in loops.
+(UUM-42937)</li><li>IL2CPP: Fixed get_base_method() to behave as mono does, preventing a crash when the method slot is outside of the vtable.
+(UUM-44323)</li><li>IL2CPP: Fixed LoadIndirectNativeInteger to use a temp variable.
+(UUM-43502)</li></ul><h3>Linux Fixes</h3><ul><li>Linux: Fixed perspective changes slower when quickly scrolling in the Scene View.
+(UUM-40326)</li><li>Linux: Fixed Vulkan falsely reporting that HDR is supported on Linux.
+(UUM-43364)</li><li>Linux: Prevent paused unity player from using excessive CPU when "run in the background" option is off.
+(UUM-38092)</li><li>Linux: Fixed a bug with surround sound hardware not being detected on Linux. Fixed an issue on Windows where we would not re-init audio output correctly, when the Unity project requested surround sound, and the Editor or player was started with no such hardware available. When surround sound hardware is later enabled and set as the default output, it will now be used.
+(UUM-348)</li><li>Linux: Fixed minor bug in GetOperatingSystemNumeric Linux API.
+(UUM-45625)</li><li>Linux: Exposing -datafolder command line argument for Linux Player release builds.
+(UUM-46895)</li><li>Linux: Fixed Linux Player generating mouse delta values when clicking the left mouse button repeatedly.
+(UUM-46825)</li><li>Linux: Fixed Scroll doesn't work when a window is attached to the left half of the secondary monitor.
+(UUM-43910)</li></ul><h3>Particles Fixes</h3><ul><li>Particles: Fixed potential crash on deletion of particle systems with mesh particles.
+(UUM-26623)</li><li>Particles: Fixed that ParticleSystems playing in Edit mode no longer plays after undoing changes, applying or reverting prefab instances or copy-pasting.
+(UUM-28514)</li></ul><h3>Scripting Fixes</h3><ul><li>Scripting: Editor no longer crashes if a coroutine is not persisted.
+(UUM-29293)</li><li>Scripting: Fixed crash on do_runtime_invoke when the Editor is compiling after modifying a script.
+(UUM-44475)</li><li>Scripting: Fixed "Monoscript is registered as both Editor and Runtime script!" error for Plugin.
+(UUM-32287)</li><li>Scripting: Fixed "Script '...' will not be compiled because it..." filling up the Editor log.
+(UUM-45593)</li><li>Scripting: PrefabUtilitiy.InstantiateAttachedAsset is deprecated.
+(UUM-33714)</li></ul><h3>UI Toolkit Fixes</h3><ul><li>UI Toolkit: Added the TextField focus when used inside a TreeView.
+(UUM-42629)</li><li>UI Toolkit: Fixed an issue in the UI Builder that would cause an exception when using a CustomRenderTexture where a RenderTexture was expected.
+(UUM-37729)</li><li>UI Toolkit: Fixed the misalignments present in the composite controls.
+(UUM-25403)</li><li>UI Toolkit: Fixed USS files reordering in UI Builder.
+(UUM-37728)</li><li>UI Toolkit: Fixed UI Builder's USS selector creation when selector starts or ends with empty spaces.
+(UUM-36056)</li><li>UI Toolkit: Fixed selection in custom controls in UI Builder.
+(UUM-32501)</li><li>UI Toolkit: Added a workaround for a Intel Graphics 3000 driver bug that would cause textures rendered by UI Toolkit to show incorrectly.
+(UUM-13134)</li><li>UI Toolkit: Fixed ScrollView produces jittery animation when playing PostPointerUpAnimation.
+(UUM-40352)</li><li>UI Toolkit: Fixed issue where you cannot set sortColumnDescriptions property after columns property in multi-column controls.
+(UIT-2124)</li><li>UI Toolkit: Fixed sorting change events being sent during reapplication of view data state.
+(UUM-36302)</li><li>UI Toolkit: Fixed textured background UVs when inset because of opaque border.
+(UUM-35321)</li><li>UI Toolkit: Fixed Vector3Field SetValueWithoutNotify triggers RegisterValueChangedCallback.
+(UUM-43504)</li><li>UI Toolkit: Fixed view state not being reapplied on MultiColumnView controls.
+(UUM-36701)</li></ul><h3>VFX Graph Fixes</h3><ul><li>VFX Graph: Fixed undefined behavior of SpawnerSetAttribute when an expression is connected to activation slot.
+(UUM-35461)</li><li>VFX Graph: Picking Overlay when the rotation is applied on VisualEffect component.
+(UUM-13531)</li></ul><h3>Video Fixes</h3><ul><li>Video: Video textures such as WebCamTextures may have thrown GraphicsTexture-related errors upon creation and possibly crashed on scene changes or other attempts to delete; this has been fixed.
+(UUM-44774)</li><li>Video: Video Player Component has irregular playback speed in Player when using WebGL.
+(UUM-33747)</li><li>Video: Fixed crash when editor using ShareX [screen-capture-recorder-to-video](https://github.com/rdp/screen-capture-recorder-to-video-windows-free) webcam.
+(UUM-44750)</li></ul><h3>WebGL Fixes</h3><ul><li>WebGL: Fixed a bug where the application's background image wouldn't appear while loading if compression was enabled.
+(UUM-8692)</li><li>WebGL: Resolve an issue making the WebGL player attempt to retry editor connections on unsupported network ports.
+(UUM-44239)</li><li>WebGL: Fixed an issue with multithreaded WebGL builds trapping on a function signature exception when switching between scenes.
+(UUM-33233)</li><li>WebGL: Fixed Build & Run for WebGL platform to establish needed COOP, COEP and CORP headers for web browsers to enable SharedArrayBuffer multithreading.
+(UUM-33017)</li></ul><h3>Android Fixes</h3><ul><li>Android: Fixed custom keystore creation via the keystore manager.
+(UUM-46300)</li><li>Android: Fixed a bug related to the "Mute Other Audio Sources" player setting on Android. There were two cases where another app's audio might not get muted when it should be. This could happen if the other app was started before the Unity app or if the other app was played via the Android "quick panel" after the Unity app was started.
+(UUM-37753)</li><li>Android: Fixed AndroidJavaProxy not always finding over private methods.
+(UUM-44752)</li><li>Android: Fixed Input.multiTouchEnabled setter when it's called before any touch event, previously such values would be disregarded since internally there was no touch device available for multiTouch to set to.
+(UUM-47104)</li><li>Android: Fixed locations of unaligned load/stores on 32-bit Android.
+(UUM-46550)</li><li>Android: Removed screen with centred app icon before the splash screen.
+(UUM-41488)</li><li>Android: Fixed a potential race condition during pause routine, which would cause application to accidentally quit instead of pausing.
+(UUM-30732)</li><li>Android: Fixed background color when rendering over native UI.
+(UUM-32877)</li></ul><h3>Burst Fixes</h3><ul><li>Burst: Fixed a compile-time performance regression in 1.8.7 that could result in slower Burst compilation and increased memory usage during compilation.</li><li>Burst: Fixed a possible source of invalid alignment, avx2 storing to stack was given a slot with the wrong alignment.</li><li>Burst: Fixed burst not being able to find external function leading to crashing the Editor.</li><li>Burst: Fixed Burst sometimes returning wrong value for static readonly fields or static constructors.</li><li>Burst: Fixed compiler crash when compiling different assemblies that define methods or types with the exact same name and namespace.</li><li>Burst: Fixed error when trying to use direct call to a nested protected class.</li><li>Burst: Fixed that converting a negated unsigned type to a float would produce a mismatching value in Burst versus .Net/Mono.</li><li>Burst: Fixed that jobs wouldn't be Burst compiled for player builds with high stripping.</li><li>Burst: Fixed that the Burst Inspector handled negation of unsigned types differently than .Net for static readonly fields or static constructors.</li><li>Burst: Fixed using Armv9 target in the Burst Inspector not formatting the assembly.</li><li>Burst: Fixed wrong alignment for v128 when doing an indirect access.</li><li>Burst: FixedSystem.NotImplementedException: Unimplemented Instruction Extension Tail_error when the code contained tail-calls.</li><li>Burst: Fixeduinttofloatconversion edge-case.</li><li>Burst: Prevented Burst emitting errors even when Burst was disabled via the--burst-disable-compilationcommand line option.</li><li>Burst: Under some conditions (if the error in compilation occurred in a location that didn't have valid debug information), building a player might not generate any files, and not display any errors.</li></ul><h3>Documentation Fixes</h3><ul><li>Documentation: Updated "Applying default presets to Assets by folder" documentation example to prevent an import infinite loop.
+(UUM-44046)</li></ul><h3>GI Fixes</h3><ul><li>GI: Fixed for memory leak when cancelling a bake.
+(UUM-41988)</li></ul><h3>macOS Fixes</h3><ul><li>macOS: Fixed editor crash when UI is redrawn.
+(UUM-34202)</li><li>macOS: Fixed driver issue when enabling the water system.
+(UUM-47762)</li><li>macOS: Make Bee Logic Work with >=15b6 Xcode Version.
+(UUM-46899)</li></ul><h3>Mono Fixes</h3><ul><li>Mono: Fixed deadlock on taking a memory profiler snapshot.
+(UUM-40688)</li><li>Mono: Fixed issue where a fixed buffer within a valuetype struct would not be passed by value correctly.
+(UUM-30210)</li><li>Mono: Fixed issue where blittable flag could be incorrect when it was read before MonoClass was inited.
+(UUM-35682)</li><li>Mono: Fixed crash in Rider when hovering a symbol to view it's value.
+(UUM-43492)</li><li>Mono: Fixed Editor crash when mini_get_method fails.
+(UUM-45293)</li><li>Mono: Fixed min alignment of structures with explicit layout.
+(UUM-46084)</li><li>Mono: Produce crash dump when g_assertion_message is called.
+(UUM-43015)</li></ul><h3>Networking Fixes</h3><ul><li>Networking: Prevent virtual method in DownloadHandlerScript from being stripped.
+(UUM-34034)</li><li>Networking: Fixed issue where UnityWebRequest would fail to establish TLS connections with Windows Server 2012 and 2016.
+(UUM-41557)</li></ul><h3>Search Fixes</h3><ul><li>Search: Fixed items with same names not showing up when using the Advanced Search Picker.
+(UUM-43907)</li><li>Search: Fixed Search's "Press Tab to filter" missing icon.
+(UUM-44351)</li><li>Search: Fixed Search's placeholder texts overlapping and escaping the search field.
+(UUM-44349)</li></ul><h3>Serialization Fixes</h3><ul><li>Serialization: Fixed editor crash when creating asset bundle having fully supported inflated types.
+(UUM-37034)</li><li>Serialization: Fixed a condition that can cause long or near-infinite loop after insertion from BaseListView.
+(UUM-41478)</li></ul><h3>SpeedTree Fixes</h3><ul><li>SpeedTree: Fixed popping LOD transitions for the Crossfade mode for URP.
+(UUM-40046)</li></ul><h3>Universal RP Fixes</h3><ul><li>Universal RP: Fixed an issue where Shader ID's weren't reset properly in the DepthNormals pass.
+(UUM-36069)</li><li>Universal RP: Fixed an issue where additional lights were not rendering correctly when using a mix of shadow settings in deferred.
+(UUM-46577)</li><li>Universal RP: Fixed an issue where IndexOutOfRangeException was thrown when creating a stacked camera from script.
+(UUM-6763)</li><li>Universal RP: Fixed an issue where NullReferenceException was thrown when camera prefab referenced a camera outside the prefab in the camera stack.
+(UUM-23148)</li><li>Universal RP: Fixed color and depth mismatch when scaling is on.
+(UUM-29397)</li><li>Universal RP: Fixed shader stripping when using APV.
+(UUM-42601)</li><li>Universal RP: Fixed an issue where Rendering Layers didn't work properly when opening a project.
+(UUM-44741)</li><li>Universal RP: Fixed an issue with Screen Space Decals where dark artefacts appeared in the editor.
+(UUM-40885)</li><li>Universal RP: Fixed TAA Very High option flicker.
+(UUM-37582)</li><li>Universal RP: Added GBuffer (fill) passes to ComplexLit and Unlit shader to prevent GBuffer data holes.
+(UUM-21919)</li><li>Universal RP: Added Shader Keywords for Soft Shadow quality levels and disable per-light quality level on untethered XR platforms.
+(UUM-33025)</li><li>Universal RP: Fixed an issue causing 'implicit truncation of vector type' warning when using ShaderGraph shaders in the Forward+ Rendering Path.
+(UUM-46851)</li><li>Universal RP: Fixed an issue where it wasn't possible to add a Renderer Feature on a renderer if another feature had a missing/broken script.
+(UUM-45664)</li><li>Universal RP: Fixed an issue where reflection probes were not updating correctly when using Forward+.
+(UUM-44032)</li></ul><h3>Graphics Fixes</h3><ul><li>Graphics: Fixed an issue where the mipmap streaming system did not take runtime changes to material texture scale properties.
+(UUM-31184)</li><li>Graphics: Fixed a crash when enabling shadows in a scene with both Built-In render pipeline and SRP materials.
+(UUM-46685)</li><li>Graphics: Fixed rendering regressions in cube maps that are copied GLESTextures.
+(UUM-45754)</li><li>Graphics: Improved SkinnedMeshRenderer mesh compatibility error message.
+(UUM-46329)</li><li>Graphics: 2023.1 Backport: Fix CustomRenderTexture artifact on sphere game object and material preview.
+(UUM-43540)</li><li>Graphics: Fixed a BatchRendererGroup thread race condition under special circumstances.
+(UUM-46934)</li><li>Graphics: Fixed an issue where Unity would crash when building a project with a sprite, mipstripping enabled and the "Load texture data on demand" project setting enabled.
+(UUM-31364)</li><li>Graphics: Fixed game window display position on-screen for additional uncommon multi-monitor layouts.
+(UUM-33795)</li><li>Graphics: Hide legacy probe debugging when APV is enabled.
+(UUM-33050)</li><li>Graphics: Improved warning issued when GraphicsBuffer.LockBufferForWrite is called more than once per frame on D3D11.
+(UUM-48133)</li><li>Graphics: [Vulkan] Crash in HybridHDRPGfxTest Standalone.
+(UUM-35004)</li></ul><h3>Scene/Game View Fixes</h3><ul><li>Scene/Game View: Fixed unusually high CPU usage when more than one Game View was open.
+(UUM-44719)</li><li>Scene/Game View: Fixed "Edit/Frame Selected" not focusing the last active scene view in the case where the Hierarchy window is focused.
+(UUM-43944)</li></ul><h3>XR Fixes</h3><ul><li>XR: Updated XR Hands to version 1.3.0.</li><li>XR: Updated XR Interaction Toolkit to version 2.5.0.</li><li>XR: Updated XR Interaction Toolkit to version 2.5.1.</li></ul><h3>Build System Fixes</h3><ul><li>Build System: Make MsvcInstallationLocator.ParseVSWhereResult accept input with a BOM.</li></ul><h3>HDRP Fixes</h3><ul><li>HDRP: Fixed prefab preview rendering dark until moved.
+(UUM-42162)</li><li>HDRP: Added error when the Rendering Layer names in HDRP Global Settings is empty.
+(UUM-41803)</li><li>HDRP: Allow the game to switch HDR on or off during run time.
+(UUM-29770)</li><li>HDRP: Fixed a potential GPU crash/hang when using local volumetric fogs.
+(UUM-48064)</li><li>HDRP: Fixed an issue where an async pass would try to sync to a culled pass mistakenly.
+(UUM-44493)</li><li>HDRP: Fixed custom post process volume component example in doc.
+(UUM-45394)</li><li>HDRP: Fixed error on water inspector when no SRP is active.
+(UUM-40843)</li><li>HDRP: Fixed GraphicsBuffer leak from APV binding code.</li><li>HDRP: Fixed Helpbox UI for LightProbeGroup Inspector.
+(UUM-38113)</li><li>HDRP: Fixed preview for refractive materials with MSAA.</li><li>HDRP: Fixed ShaderGraph Decal material position issue by using world space position.
+(UUM-42716)</li><li>HDRP: Fixed the logic used to set up materials featuring displacement mapping that would sometimes result in artifacts or suboptimal performance.
+(UUM-44723)</li><li>HDRP: Fixed the sharpening pass in order to avoid washed-out colors when using a render target with an alpha channel.
+(UUM-44448)</li><li>HDRP: Fixed: realtime Reflection probe makes volumetrics clouds wind stop.
+(UUM-37387)</li><li>HDRP: Mixed tracing mode for transparent screenspace reflections now mixes both tracing modes as expected, instead of only using ray traced reflections.
+(UUM-33701)</li><li>HDRP: Re-enabled HDR output on Mac (Was disabled).</li><li>HDRP: Fixed error when assigning non water material to water.</li><li>HDRP: Fixed foam generated on shore waves.</li><li>HDRP: Fixed GPU warnings due to water system.</li><li>HDRP: Fixed missing current sector data in debug modes.
+(UUM-46552)</li><li>HDRP: Fixed missing foam color parameter.</li><li>HDRP: Fixed to sample settings helper.</li></ul><h3>iOS Fixes</h3><ul><li>iOS: Fixed multi line keyboard not showing up after it was closed while editing text field.
+(UUM-21521)</li><li>iOS: Fixed Screen.orientation not changing value when only landscape orientations are enabled and device is rotated.
+(UUM-36598)</li><li>iOS: Leave the tvOS tests of for XRSDK integration tests.
+(UUM-21781)</li></ul><h3>Physics Fixes</h3><ul><li>Physics: Fixed crash in Rigidbody.centerOfMass when accessed on a Rigidbody that got added as a component dependency and not initialised yet.
+(UUM-35842)</li><li>Physics: Fixed up WheelCollider.rotationSpeed causing a hard crash when called while no Rigidbody is present up the hierarchy.
+(UUM-47082)</li><li>Physics: Fixed up a crash that happened when ArticulationBody was added next to TerrainCollider that had trees on it.
+(UUM-46116)</li></ul><h3>Prefabs Fixes</h3><ul><li>Prefabs: Fixed Not all childrens properties gets reverted when multi-editing a property under one Prefab instance.
+(UUM-42527)</li></ul><h3>Profiler Fixes</h3><ul><li>Profiler: Removed extraneous calls to UpdateRendererBoundingVolumes when executing an empty CommandBuffer.
+(UUM-33237)</li></ul><h3>Shaders Fixes</h3><ul><li>Shaders: Fixed "gl_" identifiers error generated while compiling some geometry/tessellation shaders for Vulkan.
+(UUM-30365)</li><li>Shaders: Fixed keyword space mismatch when using dynamic keywords together with UsePass.
+(UUM-44739)</li><li>Shaders: Fixed the UsePass ShaderLab command so it searches all subshaders, not only the first one.
+(UUM-36470)</li><li>Shaders: Fixed WarmupAllShaders to actually warm up all variants instead of just a single variant per pass.
+(UUM-45992)</li><li>Shaders: Fixed \#include_with_pragmas directives deleting other lines of code during raytracing and compute shader compilation.
+(UUM-35030)</li></ul><h3>Terrain Fixes</h3><ul><li>Terrain: Painted detail meshes now generate accurate motion vector values depending on the camera movement instead of incorrect, constant values. This fixes flickering detail meshes painted on terrain, and severely blurred objects when motion blur is enabled.
+(UUM-43491)</li><li>Terrain: Fixed a player crash when a terrain tile completely made of holes was viewed from a distance.
+(UUM-45970)</li></ul><h3>URP Fixes</h3><ul><li>URP: Fixed per-vertex light layers.
+(UUM-40810)</li><li>URP: Fixed visible outline when composited ShadowCaster2Ds with transparency overlap.
+(UUM-38076)</li></ul><h3>Core Fixes</h3><ul><li>Core: Fixed an issue where importing a hybrid package could fail if there was already a package whose name was a prefix of the hybrid package's UPM package name.
+(UUM-43102)</li><li>Core: Fixed Probe Adjustment volume UI for intensity scale.
+(UUM-47263)</li></ul><h3>Package Manager Fixes</h3><ul><li>Package Manager: Custom, local and git packages will only follow information from the package.json from now on.
+(UUM-47732)</li></ul><h3>Physics 2D Fixes</h3><ul><li>Physics 2D: Ensure that both Animation Root Motion rotation and Animation Transform rotation correctly rotate a Rigidbody2D.
+(UUM-44297)</li></ul><h3>SRP Core Fixes</h3><ul><li>SRP Core: Fixed occasional ArgumentOutOfRangeException in StaticLightingSky.
+(UUM-45262)</li></ul><h3>Version Control Fixes</h3><ul><li>Version Control: Fixed Add to ignored/hidden changes list from the Project window creating a negative rule.</li><li>Version Control: Fixed Switch to changeset not working on Gluon partial workspace.</li></ul></body></html>
